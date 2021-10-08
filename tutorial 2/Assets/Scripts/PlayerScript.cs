@@ -26,6 +26,10 @@ public class PlayerScript : MonoBehaviour
         float hozMovement = Input.GetAxis("Horizontal");
         float vertMovement = Input.GetAxis("Vertical");
         rd2d.AddForce(new Vector2(hozMovement * speed, vertMovement * speed));
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     

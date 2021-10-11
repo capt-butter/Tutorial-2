@@ -10,14 +10,21 @@ public class PlayerScript : MonoBehaviour
     public float speed;
 
     public Text score;
-
     private int scoreValue = 0;
+
+    public int lives = 3;
+    public Text livestxt;
+
+    public Text winmsg;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rd2d = GetComponent<Rigidbody2D>();
         score.text = scoreValue.ToString();
+        livestxt.text = lives.ToString();
+        winmsg.text = "";
     }
 
     // Update is called once per frame
@@ -29,6 +36,10 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey("escape"))
         {
             Application.Quit();
+        }
+        if (scoreValue == 2)
+        {
+            winmsg.text = "hi";
         }
     }
 
